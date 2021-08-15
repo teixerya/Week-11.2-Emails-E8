@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Edit Drink</h1>
+<form th:action= "@{/editDrink}" th:object= "${drink}" method="post">
+
+<input type= "hidden" th:field="*{id}">
+Name: <input type = "text" th:field="*{name}"> <br>
+Main: <input type = "text" th:field="*{main}"> <br>
+Amount: <input type = "number" th:field="*{amount1}" step="0.1"> <br>
+Second: <input type = "text" th:field="*{second}"> <br>
+Amount: <input type = "number" th:field="*{amount2}" step="0.2"> <br>
+Directions:  <input type = "text" th:field="*{directions}"> <br>
+
+<input type="submit" value="Edit Drink"/>
+
+</form>
+
+Go to <a th:href="@{/viewDrinks}">View Drink</a>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<h1>View Drinks</h1>
+
+<table border ="1">
+
+    <tr>
+        <th>Name</th>
+        <th>Main</th>
+        <th>Amount 1</th>
+        <th>Second</th>
+        <th>Amount 2</th>
+        <th>Directions</th>
+    </tr>
+
+    <tr th:each="drink: ${drinks}">
+        <td th:text="${drink.name}"></td>
+        <td th:text="${drink.main}"></td>
+        <td th:text="${drink.amount1}"></td>
+        <td th:text="${drink.second}"></td>
+        <td th:text="${drink.amount2}"></td>
+        <td th:text="${drink.directions}"></td>
+        <td> <a th:href="@{/edit/{id} (id=${drink.id} ) }">Edit</a></td>
+        <td> <a th:href="@{/delete/{id} (id=${drink.id} ) }">Delete</a></td>
+
+    </tr>
+
+</table>
+
+
+Go to <a th:href="@{/addDrink}">Add Drink</a>
+</body>
+</html>
